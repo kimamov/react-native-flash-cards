@@ -11,8 +11,8 @@ const Home = ({navigation}, props) => {
                 HELLO
             </Text>
             <View style={styles.buttonContainer}>
-                <Button onPress={()=>{navigate("Overview")}} text="PLAY" buttonStyle={{...styles.button, backgroundColor: "red"}}/>
-                <Button onPress={()=>{navigate("CreateDecks")}} text="CREATE DECK" buttonStyle={styles.button}/>
+                <Button color="green" onPress={()=>{navigate("Overview")}} buttonStyle={styles.button}>PLAY</Button>
+                <Button color="blue" onPress={()=>{navigate("CreateDecks")}} buttonStyle={styles.button}>CREATE DECK</Button>
             </View>
         </View>
     )
@@ -27,8 +27,6 @@ const styles = StyleSheet.create({
        
     },
     button: {
-       backgroundColor: '#00aeef',
-       borderColor: 'red',
        borderWidth: 1,
        borderRadius: 5,
        paddingTop: 10,
