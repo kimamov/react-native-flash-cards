@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Button from './Button'
 
 const Home = ({navigation}, props) => {
-    console.log(props)
     const {navigate}=navigation;
     return (
         <View style={{flex: 1, marginTop: 20}}>
@@ -11,8 +10,8 @@ const Home = ({navigation}, props) => {
                 HELLO
             </Text>
             <View style={styles.buttonContainer}>
-                <Button color="green" onPress={()=>{navigate("Overview")}} buttonStyle={styles.button}>PLAY</Button>
-                <Button color="blue" onPress={()=>{navigate("CreateDecks")}} buttonStyle={styles.button}>CREATE DECK</Button>
+                <Button color="green" onPress={()=>{navigate("overview")}} buttonStyle={styles.button}>PLAY</Button>
+                <Button color="blue" onPress={()=>{navigate("createDeck")}} buttonStyle={styles.button}>CREATE DECK</Button>
             </View>
         </View>
     )

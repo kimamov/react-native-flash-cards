@@ -23,12 +23,23 @@ export default StyleSheet.create({
         paddingBottom: 10,
         marginLeft: 8,
         marginRight: 8,
-        flex: 1,
+        
     },
     headingText: {
         textAlign: "center",
         fontSize: 40,
         fontWeight: "bold"
 
+    },
+    textInput:{
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: "lightgrey",
+        padding: 8
+    },
+    innerContainer: {
+        marginLeft: 10,
+        marginRight: 10,
+        flex: 1
     }
 })

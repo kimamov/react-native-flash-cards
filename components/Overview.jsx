@@ -5,15 +5,18 @@ import styles from '../styles/styles'
 import CreateDeckCard from './CreateDeckCard';
 
 
-const Overview = ({ screenProps }) => {
-    if (!screenProps || !screenProps.questions)
-        return <CreateDeckCard>NO DECKS FOUND... CREATE ONE</CreateDeckCard>
+const Overview = ({ screenProps, navigation }) => {
+    const { navigate } = navigation;
+    if (!screenProps || !screenProps.state || !screenProps.state.decks)
+        return <CreateDeckCard onPress={() => { navigate("createDeck") }}>NO DECKS FOUND... CREATE ONE</CreateDeckCard>
     return (
         <SafeAreaView>
             <FlatList style={{ paddingBottom: 20 }}
-                data={Object.keys(screenProps.questions).concat("createDeckItem")}
+                data={Object.keys(screenProps.state.decks).concat("createDeckItem")}
                 renderItem={({ item }) =>
-                    item === "createDeckItem" ? <CreateDeckCard>CREATE DECK</CreateDeckCard> : <Deck category={item} data={screenProps.questions[item]} />}
+                    item === "createDeckItem" ? 
+                        <CreateDeckCard onPress={() => { navigate("createDeck") }}>CREATE DECK</CreateDeckCard> : 
+                        <Deck category={item} navigate={navigate} data={screenProps.state.decks[item]} />}
                 keyExtractor={(item) => item + "_key_" + Date.now()}
             />
         </SafeAreaView>

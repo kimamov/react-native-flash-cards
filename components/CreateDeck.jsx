@@ -1,12 +1,15 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, FlatList, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
+import Button from './Button'
+import styles from '../styles/styles'
 
-
-const CreateDeck = () => {
+const CreateDeck = ({screenProps}) => {
+    console.log(screenProps)
     return (
-        <View>
-            <Text>CREATE</Text>
-        </View>
+        <SafeAreaView style={{flex: 1}}>
+            <Text style={styles.headingText}>CREATE DECK</Text>
+            <Button style={styles.button}>CREATE</Button>
+        </SafeAreaView>
     )
 }
 
