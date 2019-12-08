@@ -24,5 +24,11 @@ export default StyleSheet.create({
         marginLeft: 8,
         marginRight: 8,
         flex: 1,
+    },
+    headingText: {
+        textAlign: "center",
+        fontSize: 40,
+        fontWeight: "bold"
+
     }
 })

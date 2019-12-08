@@ -7,7 +7,7 @@ const Deck = ({ category, data }) => {
     console.log(category, data)
     return (
         <View style={styles.card}>
-            <Text style={{textAlign: "center", fontSize: 40, fontWeight: "bold"}}>{category}</Text>
+            <Text style={styles.headingText}>{category}</Text>
             <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-around" }}>
                 <Button buttonStyle={styles.button} color="red" text="play">PLAY</Button>
                 <Button buttonStyle={styles.button} color="blue" text="add card">ADD CARD</Button>

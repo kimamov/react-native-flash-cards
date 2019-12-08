@@ -12260,25 +12260,8 @@
       <change afterPath="$PROJECT_DIR$/../youtubeDL/yt.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtubeDL/ytCoreDl.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ytCoreDl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.expo-shared/assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/youtube-dl/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/.idea/youtube-dl.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/assets/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/assets/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/components/Button.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/components/CreateDeck.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/components/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/components/Overview.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/youtube-dl/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/youtube-dl/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.js" afterDir="false" />
     </list>
@@ -12287,6 +12270,10 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -12322,24 +12309,24 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="youtube-dl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="youtube-dl" type="462c0819:PsiDirectoryNode" />
+              <item name="react-native" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
