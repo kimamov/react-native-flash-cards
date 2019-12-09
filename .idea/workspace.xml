@@ -12262,12 +12262,6 @@
       <change afterPath="$PROJECT_DIR$/../ytCoreDl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CreateDeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CreateDeck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Deck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Deck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Overview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Overview.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.js" afterDir="false" />
     </list>
@@ -12286,8 +12280,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -12307,7 +12301,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1913" />
     <option name="y" value="9" />
     <option name="width" value="974" />
@@ -12319,8 +12313,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -12332,13 +12327,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -12367,7 +12361,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="9" width="974" height="1047" extended-state="1" />
+    <frame x="1913" y="9" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992272" visible="true" weight="0.49781182" />
@@ -12398,8 +12392,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

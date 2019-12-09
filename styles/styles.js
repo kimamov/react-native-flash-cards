@@ -21,8 +21,17 @@ export default StyleSheet.create({
         borderRadius: 5,
         paddingTop: 10,
         paddingBottom: 10,
+        
+        
+    },
+    flexButton: {
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingTop: 10,
+        paddingBottom: 10,
         marginLeft: 8,
         marginRight: 8,
+        flex: 1
         
     },
     headingText: {
