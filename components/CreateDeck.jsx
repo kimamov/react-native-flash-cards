@@ -4,7 +4,6 @@ import Button from './Button'
 import styles from '../styles/styles'
 
 const CreateDeck = ({screenProps}) => {
-    console.log(screenProps)
     return (
         <SafeAreaView style={{flex: 1}}>
             <Text style={styles.headingText}>CREATE DECK</Text>

@@ -9,7 +9,6 @@ function reducer(state, action) {
       return { ...state, decks: {...state.decks, [action.payload]: []} };
     case 'addCard':
       let questions=[...state.decks[action.deckName], action.payload];
-      console.log(state)
       return { ...state, decks: {...state.decks, [action.deckName]: questions} };
     default:
       return state;

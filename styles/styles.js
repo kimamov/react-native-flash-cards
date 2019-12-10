@@ -11,6 +11,24 @@ export default StyleSheet.create({
         justifyContent: "space-around",
         borderRadius: 10
     },
+    quizWrapper: {
+        height: 300,
+        padding: 10,
+        borderRadius: 20,
+        marginBottom: 20,
+    },
+    quizFront: {
+        borderRadius: 20,
+        justifyContent: "center",
+        flex: 1,
+        backgroundColor: "lightgrey"
+    },
+    quizBack: {
+        borderRadius: 20,
+        justifyContent: "center",
+        flex: 1,
+        backgroundColor: "red"
+    },
     buttonContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
@@ -21,8 +39,8 @@ export default StyleSheet.create({
         borderRadius: 5,
         paddingTop: 10,
         paddingBottom: 10,
-        
-        
+
+
     },
     flexButton: {
         borderWidth: 1,
@@ -32,7 +50,7 @@ export default StyleSheet.create({
         marginLeft: 8,
         marginRight: 8,
         flex: 1
-        
+
     },
     headingText: {
         textAlign: "center",
@@ -40,7 +58,7 @@ export default StyleSheet.create({
         fontWeight: "bold"
 
     },
-    textInput:{
+    textInput: {
         borderRadius: 10,
         borderWidth: 2,
         borderColor: "lightgrey",

@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 import CreateDeck from './CreateDeck'
 import CreateCard from './CreateCard'
 import Overview from './Overview'
+import Quiz from './Quiz'
 import Home from './Home'
 
 const Tabs = createBottomTabNavigator(
@@ -38,6 +39,7 @@ const Tabs = createBottomTabNavigator(
     home: { screen: Tabs },
     createDeck: { screen: CreateDeck },
     createCard: { screen: CreateCard },
+    quiz: {screen: Quiz}
   });
   
   

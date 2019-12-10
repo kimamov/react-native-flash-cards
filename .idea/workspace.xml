@@ -12261,7 +12261,6 @@
       <change afterPath="$PROJECT_DIR$/../youtubeDL/ytCoreDl.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../ytCoreDl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tensorflow/ml5/image-tagger/src/App.js" afterDir="false" />
     </list>
@@ -12301,7 +12300,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1913" />
     <option name="y" value="9" />
     <option name="width" value="974" />
@@ -12313,7 +12312,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -12327,6 +12325,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -12361,7 +12360,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="9" width="974" height="1047" extended-state="0" />
+    <frame x="1913" y="9" width="974" height="1047" extended-state="1" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992272" visible="true" weight="0.49781182" />

@@ -12,7 +12,6 @@ const CreateCard = ({ navigation, screenProps }) => {
 
     const questionCategory = navigation.state.params.category;
     const createCard = () => {
-        console.log(questionCategory)
         if (questionCategory && question) {
             screenProps.dispatch({
                 type: "addCard",
@@ -32,7 +31,7 @@ const CreateCard = ({ navigation, screenProps }) => {
             </TextInput>
 
             <Text style={{ textAlign: "center", textTransform: "uppercase" }}>ANSWER ONLY TRUE OR FALSE</Text>
-            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-around" }}>
+            <View style={styles.buttonContainer}>
                 <Button buttonStyle={answer ? activeButtonStyle : styles.flexButton} onPress={() => setAnswer(1)}>TRUE</Button>
                 <Button buttonStyle={answer ? styles.flexButton : activeButtonStyle} onPress={() => setAnswer(0)}>FALSE</Button>
             </View>

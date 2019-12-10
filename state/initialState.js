@@ -1,6 +1,8 @@
 export default {
+  score: 0,
+  solvedCards: [],
     decks: {
-      cs: [],
+      cs: [{question: "hey", answer: 1, comment: "ho"}],
       bio: [],
       math: []
     }
