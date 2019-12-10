@@ -41,8 +41,9 @@ const Quiz = ({ navigation, screenProps }) => {
                 questionIndex: randomIndex,
                 deckName: params.category
             })
-            return setAnswer("CORRECT")
-        } setAnswer("WRONG")
+            setAnswer("CORRECT")
+        } else setAnswer("WRONG")
+        setFlip(true)
     }
 
 
@@ -79,7 +80,7 @@ const Quiz = ({ navigation, screenProps }) => {
             <View style={styles.quizWrapper}>
                 <FlipCard clickable={false} flip={flip} style={{ flex: 1 }}>
                     <Card style={styles.quizFront}>{question.question}</Card>
-                    <Card style={styles.quizBack}>{question.answer}</Card>
+                    <Card style={styles.quizBack}>{question.answer? "TRUE" : "FALSE"}</Card>
                 </FlipCard>
             </View>
             {answer ?
