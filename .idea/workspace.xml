@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbb35eeb-1db6-43b2-938c-fccfdb2e686b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/youtube-dl.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CreateCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CreateCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CreateDeck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CreateDeck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Deck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Deck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Quiz.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Quiz.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/state/initialState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.js" afterDir="false" />
-    </list>
+    <list default="true" id="cbb35eeb-1db6-43b2-938c-fccfdb2e686b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+              <caret line="112" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
         </entry>
@@ -149,7 +132,7 @@
     <entry file="file://$PROJECT_DIR$/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
         </state>
       </provider>
     </entry>
