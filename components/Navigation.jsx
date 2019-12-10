@@ -39,7 +39,8 @@ const Tabs = createBottomTabNavigator(
     home: { screen: Tabs },
     createDeck: { screen: CreateDeck },
     createCard: { screen: CreateCard },
-    quiz: {screen: Quiz}
+    quiz: {screen: Quiz},
+    createDeck: {screen: CreateDeck}
   });
   
   

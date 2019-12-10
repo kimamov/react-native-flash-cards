@@ -12,8 +12,9 @@ export default StyleSheet.create({
         borderRadius: 10
     },
     quizWrapper: {
+        marginTop: 20,
         height: 300,
-        padding: 10,
+        /* padding: 10, */
         borderRadius: 20,
         marginBottom: 20,
     },

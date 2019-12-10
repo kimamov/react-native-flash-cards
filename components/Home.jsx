@@ -1,17 +1,19 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Button from './Button'
+import styles from '../styles/styles'
+
 
 const Home = ({navigation}, props) => {
     const {navigate}=navigation;
     return (
-        <View style={{flex: 1, marginTop: 20}}>
-            <Text style={{textAlign: "center"}}>
-                HELLO
+        <View style={{...styles.innerContainer, justifyContent: "center"}}>
+            <Text style={styles.headingText}>
+                FLASH CARDS
             </Text>
-            <View style={styles.buttonContainer}>
-                <Button color="green" onPress={()=>{navigate("overview")}} buttonStyle={styles.button}>PLAY</Button>
-                <Button color="blue" onPress={()=>{navigate("createDeck")}} buttonStyle={styles.button}>CREATE DECK</Button>
+            <View style={{...styles.buttonContainer, marginTop: 40}}>
+                <Button /* color="green" */ onPress={()=>{navigate("overview")}} buttonStyle={styles.flexButton}>PLAY</Button>
+                <Button /* color="blue" */ onPress={()=>{navigate("createDeck")}} buttonStyle={styles.flexButton}>CREATE DECK</Button>
             </View>
         </View>
     )
@@ -19,20 +21,3 @@ const Home = ({navigation}, props) => {
 
 export default Home
 
-const styles = StyleSheet.create({
-    buttonContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-       
-    },
-    button: {
-       borderWidth: 1,
-       borderRadius: 5,
-       paddingTop: 10,
-       paddingBottom: 10,
-       marginLeft: 8,
-       marginRight: 8,
-       flex: 1,
-       textAlign: "center"
-    }
- })

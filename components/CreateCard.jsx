@@ -16,7 +16,7 @@ const CreateCard = ({ navigation, screenProps }) => {
             screenProps.dispatch({
                 type: "addCard",
                 deckName: questionCategory,
-                payload: { question: question || "nothing", answer: answer }
+                payload: { question: question || "nothing", answer: answer, comment: comment, solved: false }
             })
             setCreate("succesfully created!")
             setTimeout(()=>setCreate(""),5000);
