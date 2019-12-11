@@ -7,39 +7,39 @@ import Button from './Button'
 
 
 let questionsArr;
-let score=0;
-let randomIndex=0;
+let score = 0;
 
-const Quiz = ({ navigation, screenProps }) => {
-    const { params } = navigation.state;
-    if (!params.category || !params.data || !params.data.questions) return <Card >LOOKS LIKE THIS DECK IS BROKEN :(</Card>
-    if (!params.data.questions.length) return <Card >LOOKS LIKE DECK IS EMPTY</Card>
+const QuizLogic = ({ category, data, navigate, dispatch }) => {
 
     const [flip, setFlip] = useState(false);
     const [answer, setAnswer] = useState(null);
     const [question, setQuestion] = useState({ question: 0, answer: 0, comment: 0 });
     const [done, setDone] = useState(false)
 
-    const {dispatch}=screenProps;
 
     useEffect(() => {
-        randomIndex;
-        questionsArr=[]
-        score=0;
-        questionsArr = [...params.data.questions];
+        questionsArr = []
+        score = 0;
+        questionsArr = [...data];
         getRandomQuestion()
-    }, [params])
+        return () => {
+            dispatch({
+                type: "setScore",
+                deckName: category,
+            })
+        };
+    }, [category])
 
-    
-    
+
+
 
     const answerQuestion = (answer) => {
         if (answer === question.answer) {
             score++;
             dispatch({
                 type: "solveCard",
-                questionIndex: randomIndex,
-                deckName: params.category
+                questionId: question.id,
+                deckName: category
             })
             setAnswer("CORRECT")
         } else setAnswer("WRONG")
@@ -48,11 +48,11 @@ const Quiz = ({ navigation, screenProps }) => {
 
 
     const getRandomQuestion = () => {
-        console.log(questionsArr.length)
+        /* console.log(questionsArr.length) */
         if (questionsArr.length) {
             setAnswer(null);
             setFlip(false);
-            randomIndex = Math.floor(Math.random() * questionsArr.length);
+            const randomIndex = Math.floor(Math.random() * questionsArr.length);
             const question = questionsArr.splice([randomIndex], 1);
             /* console.log(questionsArr) */
             if (question.length) setQuestion(question[0])
@@ -60,13 +60,12 @@ const Quiz = ({ navigation, screenProps }) => {
 
     }
 
-    const finishQuiz=()=>{
+    const finishQuiz = () => {
         dispatch({
             type: "setScore",
-            deckName: params.category,
-            payload: score
+            deckName: category,
         })
-        navigation.navigate("overview")
+        navigate("overview")
     }
 
     if (done) {
@@ -80,7 +79,7 @@ const Quiz = ({ navigation, screenProps }) => {
             <View style={styles.quizWrapper}>
                 <FlipCard clickable={false} flip={flip} style={{ flex: 1 }}>
                     <Card style={styles.quizFront}>{question.question}</Card>
-                    <Card style={styles.quizBack}>{question.answer? "TRUE" : "FALSE"}</Card>
+                    <Card style={styles.quizBack}>{question.answer ? "TRUE" : "FALSE"}</Card>
                 </FlipCard>
             </View>
             {answer ?
@@ -98,4 +97,33 @@ const Quiz = ({ navigation, screenProps }) => {
     )
 }
 
-export default Quiz
+
+export const Quiz = ({ navigation, screenProps }) => {
+    const { category } = navigation.state.params;
+    const { navigate } = navigation;
+    if (!category) return <Card >LOOKS LIKE THIS DECK IS BROKEN :(</Card>
+    if (!screenProps.state.decks[category] || !screenProps.state.decks[category].questions) return <Card >LOOKS LIKE DECK DOES NOT EXIST</Card>
+    if (!screenProps.state.decks[category].questions.length) return <Card >LOOKS LIKE DECK IS EMPTY</Card>
+
+    const data = screenProps.state.decks[category].questions;
+    return (
+        <QuizLogic category={category} data={data} navigate={navigate} dispatch={screenProps.dispatch} />
+    )
+}
+
+export const UnsolvedQuiz = ({ navigation, screenProps }) => {
+    const { category } = navigation.state.params;
+    const { navigate } = navigation;
+    if (!category) return <Card >LOOKS LIKE THIS DECK IS BROKEN :(</Card>
+    if (!screenProps.state.decks[category] || !screenProps.state.decks[category].questions) return <Card >LOOKS LIKE DECK DOES NOT EXIST</Card>
+    if (!screenProps.state.decks[category].questions.length) return <Card >LOOKS LIKE DECK IS EMPTY</Card>
+    const data = screenProps.state.decks[category].questions.filter(i => !i.solved);
+
+    return (
+        <QuizLogic category={category} data={data} navigate={navigate} dispatch={screenProps.dispatch} />
+    )
+}
+
+
+
+

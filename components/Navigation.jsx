@@ -6,8 +6,10 @@ import { Ionicons } from '@expo/vector-icons'
 import CreateDeck from './CreateDeck'
 import CreateCard from './CreateCard'
 import Overview from './Overview'
-import Quiz from './Quiz'
+import {Quiz, UnsolvedQuiz} from './Quiz'
 import Home from './Home'
+import DeckDetails from './DeckDetails';
+import QuestionOverview from './QuestionOverview';
 
 const Tabs = createBottomTabNavigator(
     {
@@ -40,7 +42,10 @@ const Tabs = createBottomTabNavigator(
     createDeck: { screen: CreateDeck },
     createCard: { screen: CreateCard },
     quiz: {screen: Quiz},
-    createDeck: {screen: CreateDeck}
+    unsolvedQuiz: {screen: UnsolvedQuiz},
+    createDeck: {screen: CreateDeck},
+    deckDetails: {screen: DeckDetails},
+    questionOverview: {screen: QuestionOverview}
   });
   
   

@@ -19,16 +19,19 @@ function reducer(state, action) {
       return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], questions: questions } } };
     case 'solveCard': {
       let questions = [...state.decks[action.deckName].questions];
-      questions[action.questionIndex].solved = true;
-      return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], questions: questions } } };
+      return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], questions: questions.map(i => i.id === action.questionId ? { ...i, solved: true } : i) } } };
     }
     case 'setScore': {
-      return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], solved: action.payload } } };
+      let score=0;
+      state.decks[action.deckName].questions.map(i=>{
+        if(i.solved) score++;
+      });
+      return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], solved: score } } };
     }
     case 'recoverState': {
       if (action.payload && action.payload.decks) {
-        console.log("recovered this")
-        console.log(action.payload);
+        /* console.log("recovered this")
+        console.log(action.payload); */
         dataRecovered = true;
         return action.payload
       } return state;
@@ -50,11 +53,11 @@ export default function App() {
       try {
 
         const data = await AsyncStorage.setItem('flashCardsStore', JSON.stringify({ ...state, longtestText: true }));
-        console.log("this data is present!!!!!");
+        /* console.log("this data is present!!!!!"); */
 
 
-        const value = await AsyncStorage.getItem('flashCardsStore');
-        console.log(value)
+        /* const value = await AsyncStorage.getItem('flashCardsStore');
+        console.log(value) */
 
       } catch (error) {
         console.log(error)

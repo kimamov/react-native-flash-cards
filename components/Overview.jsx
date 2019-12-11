@@ -3,6 +3,7 @@ import { View, Text, FlatList, SafeAreaView, TouchableOpacity } from 'react-nati
 import Deck from './Deck'
 import styles from '../styles/styles'
 import CreateDeckCard from './CreateDeckCard';
+import uuid from 'uuid-js';
 
 
 const Overview = ({ screenProps, navigation }) => {
@@ -17,7 +18,7 @@ const Overview = ({ screenProps, navigation }) => {
                     item === "createDeckItem" ? 
                         <CreateDeckCard onPress={() => { navigate("createDeck") }}>CREATE DECK</CreateDeckCard> : 
                         <Deck category={item} navigate={navigate} data={screenProps.state.decks[item]} />}
-                keyExtractor={(item) => item + "_key_" + Date.now()}
+                keyExtractor={(item) => item + "deck_key_" + uuid()}
             />
         </SafeAreaView>
 

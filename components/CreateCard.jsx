@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Text, SafeAreaView, TextInput, View } from 'react-native';
 import Button from './Button'
 import styles from '../styles/styles'
+import uuid from 'uuid'
 
 const CreateCard = ({ navigation, screenProps }) => {
     const [question, setQuestion] = useState("");
@@ -16,7 +17,7 @@ const CreateCard = ({ navigation, screenProps }) => {
             screenProps.dispatch({
                 type: "addCard",
                 deckName: questionCategory,
-                payload: { question: question || "nothing", answer: answer, comment: comment, solved: false }
+                payload: { id: uuid(),question: question || "nothing", answer: answer, comment: comment, solved: false }
             })
             setCreate("succesfully created!")
             setTimeout(()=>setCreate(""),5000);

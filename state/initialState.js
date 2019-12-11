@@ -4,6 +4,7 @@ export default {
   decks: {
     cs: {
       questions: [{
+        id: 0,
         question: "hey",
         answer: 1,
         comment: "ho",
