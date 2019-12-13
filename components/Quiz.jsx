@@ -117,6 +117,7 @@ const QuizLogic = ({ category, data, navigate, dispatch }) => {
 }
 
 
+
 export const Quiz = ({ navigation, screenProps }) => {
     const { category } = navigation.state.params;
     const { navigate } = navigation;
@@ -128,6 +129,10 @@ export const Quiz = ({ navigation, screenProps }) => {
     return (
         <QuizLogic category={category} data={data} navigate={navigate} dispatch={screenProps.dispatch} />
     )
+}
+
+Quiz.navigationOptions={
+    title: "Quiz"
 }
 
 export const UnsolvedQuiz = ({ navigation, screenProps }) => {
@@ -143,6 +148,8 @@ export const UnsolvedQuiz = ({ navigation, screenProps }) => {
     )
 }
 
-
+UnsolvedQuiz.navigationOptions={
+    title: "Quiz"
+}
 
 

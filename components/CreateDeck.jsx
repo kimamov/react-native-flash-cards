@@ -23,4 +23,8 @@ const CreateDeck = ({ navigation, screenProps }) => {
     )
 }
 
+CreateDeck.navigationOptions={
+    title: "Create Deck"
+}
+
 export default CreateDeck

@@ -29,7 +29,7 @@ const Tabs = createBottomTabNavigator(
         } else if (routeName === 'Advanced') {
           iconName = `ios-checkmark-circle${focused ? '' : '-outline'}`;
         }
-        return <IconComponent name={iconName} size={25} color={tintColor} />;
+        return <IconComponent name={iconName} size={35} color={tintColor} />;
       },
     }),
     tabBarOptions: {
@@ -47,7 +47,9 @@ const StackNavigator = createStackNavigator({
   unsolvedQuiz: { screen: UnsolvedQuiz },
   createDeck: { screen: CreateDeck },
   questionOverview: { screen: QuestionOverview }
-});
+},
+  { defaultNavigationOptions: { title: 'FLASH CARDS' }, headerLayoutPreset: 'center' },
+);
 
 
 

@@ -30,4 +30,8 @@ const QuestionOverview = ({ navigation, screenProps }) => {
     )
 }
 
+QuestionOverview.navigationOptions={
+    title: "Cards"
+}
+
 export default QuestionOverview

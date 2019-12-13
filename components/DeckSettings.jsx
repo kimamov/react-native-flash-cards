@@ -53,4 +53,9 @@ const DeckSettings = ({ screenProps, navigation }) => {
     )
 }
 
+
+DeckSettings.navigationOptions={
+    title: "Edit Decks"
+}
+
 export default DeckSettings

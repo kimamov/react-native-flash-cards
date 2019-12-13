@@ -70,4 +70,8 @@ const CreateCard = ({ navigation, screenProps }) => {
     )
 }
 
+CreateCard.navigationOptions={
+    title: "Create Card"
+}
+
 export default CreateCard

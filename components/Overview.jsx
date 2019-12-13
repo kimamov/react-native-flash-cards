@@ -36,4 +36,8 @@ const Overview = ({ screenProps, navigation }) => {
     )
 }
 
+Overview.navigationOptions={
+    title: "FLASH CARDS"
+}
+
 export default Overview
