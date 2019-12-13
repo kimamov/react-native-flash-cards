@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import Navigation from './components/Navigation'
 import initialState from './state/initialState'
 import { AppState, AsyncStorage } from 'react-native';
-
+import { askPermissions, scheduleNotification } from "./NotificationService.js"
 
 let dataRecovered = false;
 let stateWasChanged = false;
@@ -19,14 +19,22 @@ function reducer(state, action) {
       return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], questions: questions } } };
     case 'solveCard': {
       let questions = [...state.decks[action.deckName].questions];
-      return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], questions: questions.map(i => i.id === action.questionId ? { ...i, solved: true } : i) } } };
+      return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], questions: questions.map(i => i.id === action.questionId ? { ...i, solved: action.payload } : i) } } };
     }
     case 'setScore': {
-      let score=0;
-      state.decks[action.deckName].questions.map(i=>{
-        if(i.solved) score++;
+      let score = 0;
+      state.decks[action.deckName].questions.map(i => {
+        if (i.solved) score++;
       });
+      /* reset the notification timer */
+      scheduleNotification()
+
       return { ...state, decks: { ...state.decks, [action.deckName]: { ...state.decks[action.deckName], solved: score } } };
+    }
+    case 'deleteDeck': {
+      if (!state.decks[action.payload]) return state;
+      const { [action.payload]: value, ...rest } = state.decks;
+      return { ...state, decks: { ...rest } };
     }
     case 'recoverState': {
       if (action.payload && action.payload.decks) {
@@ -52,12 +60,7 @@ export default function App() {
     if (state && stateWasChanged) {
       try {
 
-        const data = await AsyncStorage.setItem('flashCardsStore', JSON.stringify({ ...state, longtestText: true }));
-        /* console.log("this data is present!!!!!"); */
-
-
-        /* const value = await AsyncStorage.getItem('flashCardsStore');
-        console.log(value) */
+        await AsyncStorage.setItem('flashCardsStore', JSON.stringify(state));
 
       } catch (error) {
         console.log(error)
@@ -97,6 +100,10 @@ export default function App() {
     stateWasChanged = false;
     dataRecovered = false;
     retrieveData()
+    askPermissions()
+    scheduleNotification()
+    return () => {
+    };
   }, [])
 
   useEffect(() => {

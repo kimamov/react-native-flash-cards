@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FlipCard from 'react-native-flip-card'
-import { Text, SafeAreaView, View } from 'react-native';
+import { Text, SafeAreaView, View, TextInput } from 'react-native';
 import styles from '../styles/styles'
 import Card from './Card';
 import Button from './Button'
@@ -8,11 +8,12 @@ import Button from './Button'
 
 let questionsArr;
 let score = 0;
+let questionCount = 0;
 
 const QuizLogic = ({ category, data, navigate, dispatch }) => {
 
     const [flip, setFlip] = useState(false);
-    const [answer, setAnswer] = useState(null);
+    const [answer, setAnswer] = useState("");
     const [question, setQuestion] = useState({ question: 0, answer: 0, comment: 0 });
     const [done, setDone] = useState(false)
 
@@ -21,6 +22,7 @@ const QuizLogic = ({ category, data, navigate, dispatch }) => {
         questionsArr = []
         score = 0;
         questionsArr = [...data];
+        questionCount = questionsArr.length;
         getRandomQuestion()
         return () => {
             dispatch({
@@ -33,16 +35,20 @@ const QuizLogic = ({ category, data, navigate, dispatch }) => {
 
 
 
-    const answerQuestion = (answer) => {
-        if (answer === question.answer) {
+    const answerQuestion = () => {
+        let solved = false;
+        if (String(answer) === String(question.answer)) {
             score++;
-            dispatch({
-                type: "solveCard",
-                questionId: question.id,
-                deckName: category
-            })
+            solved = true;
             setAnswer("CORRECT")
         } else setAnswer("WRONG")
+
+        dispatch({
+            type: "solveCard",
+            questionId: question.id,
+            deckName: category,
+            payload: solved
+        })
         setFlip(true)
     }
 
@@ -65,12 +71,13 @@ const QuizLogic = ({ category, data, navigate, dispatch }) => {
             type: "setScore",
             deckName: category,
         })
-        navigate("overview")
+        navigate("Home")
     }
 
     if (done) {
-        return <View style={styles.innerContainer}>
-            <Text style={styles.headingText}>ALL QUESTIONS ANSWERED</Text>
+        return <View style={{...styles.innerContainer, justifyContent: "center"}}>
+            <Text style={{...styles.headingText, marginBottom: 40}}>ALL QUESTIONS ANSWERED</Text>
+            <Text style={{...styles.headingText, marginBottom: 40}}>YOUR SCORE {score} / {questionCount}</Text>
             <Button onPress={finishQuiz} style={{ ...styles.button, margin: 8 }}>GO TO OVERVIEW</Button>
         </View>
     }
@@ -79,20 +86,32 @@ const QuizLogic = ({ category, data, navigate, dispatch }) => {
             <View style={styles.quizWrapper}>
                 <FlipCard clickable={false} flip={flip} style={{ flex: 1 }}>
                     <Card style={styles.quizFront}>{question.question}</Card>
-                    <Card style={styles.quizBack}>{question.answer ? "TRUE" : "FALSE"}</Card>
+                    <Card style={styles.quizBack}>{question.answer}</Card>
                 </FlipCard>
             </View>
-            {answer ?
-                <View>
+
+
+            {flip ?
+                <>
                     <Text style={styles.headingText}>{answer}</Text>
                     <Button onPress={getRandomQuestion} style={{ ...styles.button, margin: 8 }}>NEXT</Button>
-                </View>
+                </>
                 :
-                <View style={styles.buttonContainer}>
-                    <Button buttonStyle={styles.flexButton} onPress={() => answerQuestion(1)}>TRUE</Button>
-                    <Button buttonStyle={styles.flexButton} onPress={() => answerQuestion(0)}>FALSE</Button>
-                </View>}
-        </SafeAreaView>
+                <>
+                    <View style={{ marginBottom: 40 }}>
+                        <TextInput
+                            style={{ ...styles.textInput, marginTop: 20, marginBottom: 10 }}
+                            placeholder="your answer" value={answer} onChangeText={(text) => setAnswer(text)}
+                        />
+                        <Button color="green" onPress={answerQuestion} style={{ ...styles.button, margin: 8 }}>SUBMIT</Button>
+                    </View>
+                    <Button color="red" onPress={() => setFlip(true)} style={{ ...styles.button, margin: 8 }}>SHOW ANSWER</Button>
+                </>
+            }
+
+
+
+        </SafeAreaView >
 
     )
 }

@@ -1,46 +1,71 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, SafeAreaView, TextInput, View } from 'react-native';
 import Button from './Button'
 import styles from '../styles/styles'
 import uuid from 'uuid'
 
+let timeOut;
+
 const CreateCard = ({ navigation, screenProps }) => {
     const [question, setQuestion] = useState("");
     const [comment, setComment] = useState("");
-    const [answer, setAnswer] = useState(1);
+    const [answer, setAnswer] = useState("");
     const [createState, setCreate] = useState("");
-    const activeButtonStyle = { ...styles.flexButton, borderColor: "purple", borderWidth: 4}
+    const activeButtonStyle = { ...styles.flexButton, borderColor: "purple", borderWidth: 4 }
 
     const questionCategory = navigation.state.params.category;
+
+
+    useEffect(() => {
+        timeOut = null;
+        return () => {
+            clearTimeout(timeOut)
+        };
+    }, [])
+
     const createCard = () => {
-        if (questionCategory && question) {
+        if (questionCategory && question && answer) {
             screenProps.dispatch({
                 type: "addCard",
                 deckName: questionCategory,
-                payload: { id: uuid(),question: question || "nothing", answer: answer, comment: comment, solved: false }
+                payload: { id: uuid(), question: question || "nothing", answer: answer, comment: comment, solved: false }
             })
             setCreate("succesfully created!")
-            setTimeout(()=>setCreate(""),5000);
+            timeOut = setTimeout(() => setCreate(""), 5000);
         }
     }
+
+    const createAnother = () => {
+        setQuestion("")
+        setAnswer("")
+        setCreate("")
+        setComment("")
+    }
+
     return (
-        <SafeAreaView style={{...styles.innerContainer, justifyContent: "center"}}>
-            {createState?<Text style={{ ...styles.headingText, textTransform: "uppercase" }}>{createState}</Text>:null}
+        <SafeAreaView style={{ ...styles.innerContainer, justifyContent: "center" }}>
+            {/* {createState?<Text style={{ ...styles.headingText, textTransform: "uppercase" }}>{createState}</Text>:null} */}
 
             <Text style={{ ...styles.headingText, textTransform: "uppercase" }}>CREATE A QUESTION FOR {questionCategory}</Text>
             <TextInput style={{ ...styles.textInput, marginTop: 20, marginBottom: 20 }} placeholder="your question" value={question} onChangeText={(text) => setQuestion(text)}>
             </TextInput>
 
-            <Text style={{ textAlign: "center", textTransform: "uppercase" }}>ANSWER ONLY TRUE OR FALSE</Text>
-            <View style={styles.buttonContainer}>
-                <Button buttonStyle={answer ? activeButtonStyle : styles.flexButton} onPress={() => setAnswer(1)}>TRUE</Button>
-                <Button buttonStyle={answer ? styles.flexButton : activeButtonStyle} onPress={() => setAnswer(0)}>FALSE</Button>
-            </View>
-
-            <TextInput style={{ ...styles.textInput, marginTop: 20, marginBottom: 20 }} placeholder="comment or additional information" value={comment} onChangeText={(text) => setComment(text)}>
-
+            <Text style={{ textAlign: "center", textTransform: "uppercase", fontSize: 20 }}>ADD ANSWER TO QUESTION</Text>
+            <TextInput style={{ ...styles.textInput, marginTop: 20, marginBottom: 40 }} placeholder="your answer" value={answer} onChangeText={(text) => setAnswer(text)}>
             </TextInput>
-            <Button onPress={createCard} style={styles.button}>CREATE</Button>
+
+            {/* <TextInput style={{ ...styles.textInput, marginTop: 20, marginBottom: 20 }} placeholder="comment or additional information" value={comment} onChangeText={(text) => setComment(text)}>
+
+            </TextInput> */}
+            {createState ?
+                <>
+                    <Text style={{ textAlign: "center", fontSize: 20, marginBottom: 40, textTransform: "uppercase" }}>{createState}</Text>
+                    <View style={styles.buttonContainer}>
+                        <Button onPress={createAnother} buttonStyle={styles.flexButton}>CREATE MORE</Button>
+                        <Button onPress={()=>navigation.navigate("Home")} buttonStyle={styles.flexButton}>DONE</Button>
+                    </View>
+                </> :
+                <Button onPress={createCard} buttonStyle={styles.button}>CREATE</Button>}
         </SafeAreaView>
     )
 }
