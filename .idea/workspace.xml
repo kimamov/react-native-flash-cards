@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbb35eeb-1db6-43b2-938c-fccfdb2e686b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CreateCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CreateCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Deck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Deck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Overview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Overview.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Quiz.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Quiz.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/state/initialState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="116" selection-start-line="116" selection-end-line="116" />
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
             </state>
           </provider>
         </entry>
@@ -59,7 +51,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -71,8 +62,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -143,7 +135,7 @@
     <entry file="file://$PROJECT_DIR$/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
         </state>
       </provider>
     </entry>

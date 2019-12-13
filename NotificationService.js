@@ -28,6 +28,7 @@ export const sendNotificationImmediately = async () => {
 
 export const scheduleNotification = async () => {
     await Notifications.dismissAllNotificationsAsync();
+    /* set reminder for next day same time */
     let notificationId = Notifications.scheduleLocalNotificationAsync(
       {
         title: "PLAY FLASH CARDS",
@@ -35,7 +36,7 @@ export const scheduleNotification = async () => {
       },
       {
         repeat: 'minute',
-        time: Date.now() + 11111,
+        time: Date.now() + (24 * 60 * 60 * 1000),
       },
     );
   };
